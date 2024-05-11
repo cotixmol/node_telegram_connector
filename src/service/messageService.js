@@ -4,6 +4,7 @@ import telegramService from '../integration/telegramService.js';
 const processIncomingMessage = async (message) => {
   const responseFromPythonBot = await pythonBotService.sendMessageToPythonService(message);
   // await telegramService.sendResponseToTelegram(responseFromPythonBot);
+  console.log(responseFromPythonBot)
 };
 
 export default { processIncomingMessage };
