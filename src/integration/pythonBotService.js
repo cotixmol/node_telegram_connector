@@ -9,8 +9,8 @@ const sendMessageToPythonService = async (message) => {
     last_name: message.chat.last_name
   };
 
-  // await axios.post(process.env.PYTHON_BOT_SERVICE_URL, formattedMessage);
-  return {"message":formattedMessage};
+  responseFromPythonBot = await axios.post(process.env.PYTHON_BOT_SERVICE_URL, formattedMessage);
+  return responseFromPythonBot
 };
 
 export default { sendMessageToPythonService };
