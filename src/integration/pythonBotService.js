@@ -10,6 +10,7 @@ const sendMessageToPythonService = async (message) => {
   };
 
   const responseFromPythonBot = await axios.post(`${process.env.PYTHON_BOT_SERVICE_URL}/process_message`, formattedMessage);
+  console.log(responseFromPythonBot)
   return responseFromPythonBot
 };
 
