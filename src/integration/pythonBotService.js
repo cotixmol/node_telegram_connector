@@ -6,7 +6,7 @@ const sendMessageToPythonService = async (message) => {
     return {
       "status": 200,
       "message": {
-          "user_id": message.chat.id,
+          "user_id": message.message.chat.id,
           "content": "Great, what expenses do you want to save?"
       }
     } 
