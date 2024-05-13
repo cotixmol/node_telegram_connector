@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-const sendResponseToTelegram = async (response) => {
+const sendResponseToTelegram = async (response_data) => {
   const url = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
-  
-  await axios.post(url, {
-    "chat_id": response.user_id,
-    "text": response.content,
-  });
+
+  let responseToTelegram = {
+    "chat_id": response_data.message.user_id,
+    "text": response_data.message.content,
+  }
+  await axios.post(url, responseToTelegram);
 };
 
 export default { sendResponseToTelegram };
