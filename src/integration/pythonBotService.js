@@ -7,15 +7,15 @@ const sendMessageToPythonService = async (message) => {
   }
 
   let formattedMessage = {
-    user_id: message.chat.id,
-    text: message.text,
-    first_name: message.chat.first_name,
-    last_name: message.chat.last_name
+    "user_id": message.chat.id,
+    "text": message.text,
+    "first_name": message.chat.first_name,
+    "last_name": message.chat.last_name
   };
 
-  let response = await axios.post(`${process.env.PYTHON_BOT_SERVICE_URL}/process_message`, formattedMessage);
+  let response  = await axios.post(`${process.env.PYTHON_BOT_SERVICE_URL}/process_message`, formattedMessage );
 
-  return response;
+  return response.data;
 };
 
 export default { sendMessageToPythonService };
