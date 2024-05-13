@@ -1,17 +1,6 @@
 import axios from 'axios';
 
 const sendMessageToPythonService = async (message) => {
-
-  if (message.message.text=="/start"){
-    return {
-      "status": 200,
-      "message": {
-          "user_id": message.message.chat.id,
-          "content": "Great, what expenses do you want to save?"
-      }
-    } 
-  }
-
   let formattedMessage = {
     "user_id": message.message.chat.id,
     "text": message.message.text,
