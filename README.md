@@ -51,8 +51,19 @@ This connector adapts messages from Telegram, enabling seamless communication be
       "text": str
   }
   ```
-  
+
 - **Seamless Integration**: Ensures smooth communication between different platforms.
+
+- **Response Handling**: Receives processed responses from the Python Bot Application and sends them back to the Telegram Bot. Response format:
+  ```json
+  {
+      "status": 200,
+      "message": {
+          "user_id": int,
+          "content": str
+      }
+  }
+  ```
 
 ### 📦 Installation
 
@@ -82,4 +93,4 @@ This connector adapts messages from Telegram, enabling seamless communication be
 
 ### 🛠️ Testing
 
-You can test the reception and response of the application by using ngrok in your local setup. Use the input request (a Telegram fake message) to connect with the local environment in the Python Bot App.
+You can test the reception and response of the application by using ngrok in your local setup. Use the input request (a Telegram fake message) to connect with the local environment in the Python Bot App and verify the end-to-end interaction.
